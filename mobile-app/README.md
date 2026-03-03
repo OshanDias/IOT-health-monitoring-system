@@ -1,1 +1,1 @@
-# Mobile App Files (add .aia here)
+# AppplicationFiles (add .aia here)
