@@ -45,13 +45,6 @@ and chronic disease management.
 - Week 9: Documentation, demo video
 - Week 10: Presentation preparation
 
- Documentation
-- [Proposal](docs/proposal.md)
-- [Final Report](docs/final-report.md)
-- [User Manual](docs/user-manual.md)
-
- Demo
-
-[Link to demo video - to be added]
+ 
 
 
