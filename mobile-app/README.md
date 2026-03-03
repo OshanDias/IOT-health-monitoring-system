@@ -1,1 +1,1 @@
-# AppplicationFiles (add .aia here)
+# Appplication Files (add .aia here)
