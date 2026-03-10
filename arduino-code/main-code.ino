@@ -15,11 +15,11 @@
 #include <Adafruit_MLX90614.h>        // Library for contactless IR temperature sensor (MLX90614)
 
 // ======================== WiFi Credentials ============================
-#define WIFI_SSID "Dias Manor"        // Your WiFi network name (SSID)
-#define WIFI_PASSWORD "Praneeth@05847" // WiFi password
+#define WIFI_SSID ""        // Your WiFi network name (SSID)
+#define WIFI_PASSWORD "" // WiFi password
 
 // ======================== Firebase Configuration ======================
-#define API_KEY "AIzaSyBVWW228779je5e5INv5EgBKR9DN1a4GyU"  
+#define API_KEY ""  
                                       // Web API Key from Firebase project settings → used for authentication
 #define DATABASE_URL "https://health-monitor-iot-c3835-default-rtdb.asia-southeast1.firebasedatabase.app/"  
                                       // Full URL of your Firebase Realtime Database (Asia-Southeast1 region)
