@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Health Monitoring System</title>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+margin:0;
+}
+
+header{
+padding:20px;
+font-size:28px;
+font-weight:bold;
+background:#020617;
+box-shadow:0 3px 10px black;
+}
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
+gap:30px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+width:260px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+.value{
+font-size:48px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.unit{
+font-size:18px;
+opacity:0.7;
+}
+
+.heartbeat{
+
+font-size:40px;
+color:red;
+animation:beat 1s infinite;
+
+}
+
+@keyframes beat{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.3)}
+100%{transform:scale(1)}
+
+}
+
+.status{
+
+margin-top:40px;
+font-size:18px;
+
+}
+
+.online{
+
+color:#22c55e;
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Smart Health Monitoring System
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Heart Rate</h2>
+
+<div class="heartbeat">❤</div>
+
+<div class="value" id="hr">--</div>
+
+<div class="unit">BPM</div>
+
+</div>
+
+<div class="card">
+
+<h2>Temperature</h2>
+
+<div class="value" id="temp">--</div>
+
+<div class="unit">°C</div>
+
+</div>
+
+<div class="card">
+
+<h2>SpO2</h2>
+
+<div class="value" id="spo2">--</div>
+
+<div class="unit">%</div>
+
+</div>
+
+</div>
+
+<div class="status">
+
+System Status: <span class="online">ONLINE</span>
+
+</div>
+
+<script>
+
+var firebaseConfig = {
+
+apiKey: "AIzaSyBVWW228779je5e5INv5EgBKR9DN1a4GyU",
+
+databaseURL: "https://health-monitor-iot-c3835-default-rtdb.asia-southeast1.firebasedatabase.app"
+
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+
+database.ref("Patients/Patient01/latest/HeartRate").on("value", function(snapshot){
+
+document.getElementById("hr").innerHTML = snapshot.val();
+
+});
+
+database.ref("Patients/Patient01/latest/Temperature").on("value", function(snapshot){
+
+document.getElementById("temp").innerHTML = snapshot.val();
+
+});
+
+database.ref("Patients/Patient01/latest/SpO2").on("value", function(snapshot){
+
+document.getElementById("spo2").innerHTML = snapshot.val();
+
+});
+
+</script>
+
+</body>
+
+</html>
